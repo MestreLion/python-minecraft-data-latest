@@ -1,5 +1,5 @@
-python-minecraft-data
-=====================
+python-minecraft-data-latest
+============================
 
 |pypi|_
 
@@ -9,24 +9,24 @@ Installation
 ------------
 From PyPi:
 
-``pip install minecraft_data``
+``pip3 install minecraft-data-latest``
 
 From Repo:
 
-``python -m pip install git+https://github.com/SpockBotMC/python-minecraft-data``
+``pip3 install git+https://github.com/MestreLion/python-minecraft-data-latest``
 
 Usage
 -----
 
-See the `example.py <https://github.com/rom1504/python-minecraft-data/blob/master/example.py>`__
+See the `example.py <example.py>`__
 
 
 Documentation
 -------------
 
-- See `doc/api.md <https://github.com/rom1504/python-minecraft-data/blob/master/doc/api.md>`__
-- See `doc/history.md <https://github.com/rom1504/python-minecraft-data/blob/master/doc/history.md>`__
+- See `doc/api.md <doc/api.md>`__
+- See `doc/history.md <doc/history.md>`__
 
 
-.. |pypi| image:: https://img.shields.io/pypi/v/minecraft_data.svg
-.. _pypi: https://pypi.python.org/pypi/minecraft_data
+.. |pypi| image:: https://img.shields.io/pypi/v/minecraft-data-latest.svg
+.. _pypi: https://pypi.python.org/pypi/minecraft-data-latest
