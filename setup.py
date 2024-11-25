@@ -16,14 +16,14 @@ def package_files(directory):
 extra_files = package_files('minecraft_data/data/data')
 
 setup(
-    name='minecraft_data',
+    name='minecraft-data-latest',
     description='Provide easy access to minecraft data in python',
     license='MIT',
     long_description=open('README.rst').read(),
     version='3.20.0',
-    maintainer='Vito Gamberini',
-    maintainer_email='vito@gamberini.email',
-    url='https://github.com/SpockBotMC/python-minecraft-data',
+    maintainer='Rodrigo Silva (MestreLion)',
+    maintainer_email='minecraft@rodrigosilva.com',
+    url='https://github.com/MestreLion/python-minecraft-data-latest',
     packages=find_packages(),
     package_data={'minecraft_data': extra_files},
     install_requires=[],
