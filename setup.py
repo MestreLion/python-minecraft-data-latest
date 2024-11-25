@@ -20,7 +20,7 @@ setup(
     description='Provide easy access to minecraft data in python',
     license='MIT',
     long_description=open('README.rst').read(),
-    version='3.20.0',
+    version='0.1',
     maintainer='Rodrigo Silva (MestreLion)',
     maintainer_email='minecraft@rodrigosilva.com',
     url='https://github.com/MestreLion/python-minecraft-data-latest',
