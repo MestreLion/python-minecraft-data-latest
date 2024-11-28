@@ -38,7 +38,7 @@ requires-python = ">=3.7"  # from setuptools >= 61.0
 # Building
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 [build-system]
-requires = ["setuptools >= 61.0"]  # Supports pyproject.toml configuration
+requires = ["setuptools == 68.1.2"]  # Supports pyproject.toml configuration
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
