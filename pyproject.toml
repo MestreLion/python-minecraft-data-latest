@@ -3,7 +3,7 @@
 # https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
 [project]
 name = "minecraft-data-latest"
-version = "0.1.1+dev"
+version = "0.2"
 maintainers = [
     {name="Rodrigo Silva (MestreLion)", email="linux@rodrigosilva.com"},
 ]
