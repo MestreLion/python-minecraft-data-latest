@@ -15,10 +15,23 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.12'
+    - name: Check minecraft_data submodule availability and size
+      run: >-
+        dir=minecraft_data/data/data/ &&
+        size=$(du -bs -- "$dir" | cut -f1) &&
+        printf '%s\t%s\n' "$size" "$dir" &&
+        [[ "$size" ]] && ((size > 250 * 1000 * 1000))
     - name: Install pypa/build
       run: python3 -m pip install build --user
     - name: Build a binary wheel and a source tarball
       run: python3 -m build
+    - name: Check build artifacts
+      run: >-
+        dir=dist/ &&
+        ls -l "$dir" &&
+        size=$(du -bs -- "$dir" | cut -f1) &&
+        printf '%s\t%s\n' "$size" "$dir" &&
+        ((size > 30 * 1000 * 1000))
     - name: Store the distribution packages
       uses: actions/upload-artifact@v4
       with:
