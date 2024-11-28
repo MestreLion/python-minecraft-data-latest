@@ -1,5 +1,0 @@
-include *.rst
-include LICENSE
-include MANIFEST.in
-include *.py
-recursive-include minecraft_data *.json

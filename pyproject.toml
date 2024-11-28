@@ -1,0 +1,56 @@
+# -----------------------------------------------------------------------------
+# Metadata
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+[project]
+name = "minecraft-data-latest"
+version = "0.1.1"
+maintainers = [
+    {name="Rodrigo Silva (MestreLion)", email="linux@rodrigosilva.com"},
+]
+authors = [
+    {name="Vito Gamberini", email="vito@gamberini.email"},
+]
+description = "Python bindings to easily access latest minecraft-data database"
+license =  {text = "MIT"}  # Free text, using SPDX
+urls."Source Code" = "https://github.com/MestreLion/python-minecraft-data-latest"
+urls."Issue Tracker" = "https://github.com/MestreLion/python-minecraft-data-latest/issues"
+readme = {file = "README.rst", content-type = "text/x-rst"}
+keywords = [ "minecraft", "game", "data" ]
+classifiers = [
+    # https://pypi.org/classifiers/
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",   # oldest supported
+    "Programming Language :: Python :: 3.13",  # latest tested
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# -----------------------------------------------------------------------------
+# Requirements
+requires-python = ">=3.7"  # from setuptools >= 61.0
+
+# -----------------------------------------------------------------------------
+# Building
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+[build-system]
+requires = ["setuptools >= 62.3"]  # Allow recursive globs (**) in 'package-data'
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# Do NOT use bare 'packages'! It won't handle the minecraft_data subdirs, not
+# even as implicit namespace (sub-)packages, as they contain no python file.
+# So either setuptools' "Automatic Package Discovery" or explicit 'packages.find'
+# with globbing seems to be *required* for this project.
+packages.find.include = ["minecraft_data", "minecraft_data.*"]
+
+# If not using MANIFEST.in or setuptools_scm, 'package-data' seems to be
+# *required* for including non-Python data files, at least in a flat layout, as
+# 'include-package-data' alone is *very* misleading and will not work as intended:
+# It only affects wheel, NOT sdist! And since `python3 -m build` creates wheel
+# from sdist (not source tree), BOTH sdist and wheel end up without data files.
+package-data = {"minecraft_data" = ["data/**/*"]}
