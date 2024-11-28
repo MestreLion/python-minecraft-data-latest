@@ -1,0 +1,51 @@
+# -----------------------------------------------------------------------------
+# Metadata
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+[project]
+name = "minecraft-data-latest"
+version = "0.1"
+maintainers = [
+    {name="Rodrigo Silva (MestreLion)", email="linux@rodrigosilva.com"},
+]
+authors = [
+    {name="Vito Gamberini", email="vito@gamberini.email"},
+]
+description = "Python bindings to easily access latest minecraft-data database"
+license =  {text = "MIT"}  # Free text, using SPDX
+urls."Source Code" = "https://github.com/MestreLion/python-minecraft-data-latest"
+urls."Issue Tracker" = "https://github.com/MestreLion/python-minecraft-data-latest/issues"
+readme = {file = "README.rst", content-type = "text/x-rst"}
+keywords = [ "minecraft", "game", "data" ]
+classifiers = [
+    # https://pypi.org/classifiers/
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",   # oldest supported
+    "Programming Language :: Python :: 3.13",  # latest tested
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# -----------------------------------------------------------------------------
+# Requirements
+requires-python = ">=3.7"  # from setuptools >= 61.0
+
+# -----------------------------------------------------------------------------
+# Building
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+[build-system]
+requires = ["setuptools >= 61.0"]  # Supports pyproject.toml configuration
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# Both settings below are optional, as 'include-package-data' and 'namespaces'
+# are true by default (the former only in a pyproject.toml), and an empty or
+# missing 'find' triggers setuptools' automatic package discovery, which will
+# find the top-level minecraft_data package and include its whole 'data' tree
+# as implicit namespace (sub-)packages. But avoid relying on setuptools defaults
+packages.find = {include = ["minecraft_data", "minecraft_data.*"], namespaces = true}
+include-package-data = true
