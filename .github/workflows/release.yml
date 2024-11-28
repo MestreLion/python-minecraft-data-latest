@@ -92,6 +92,7 @@ jobs:
     name: Publish 🐍 to TestPyPI
     needs:
     - build
+    - github-release
     runs-on: ubuntu-latest
     environment:
       name: testpypi
